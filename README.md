@@ -1,4 +1,4 @@
-#Backend app for users management and login
+Backend app for users management and login
 
 Technologies:
 * Java 17
