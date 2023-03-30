@@ -1,2 +1,10 @@
-# user-jwt
-This repository contain a JWT implementation template in Spingboot and outh2 projects to do login and register
+#Backend app for users management and login
+
+Technologies:
+* Java 17
+* Spring boot
+* Maven
+* Gradle 8.0
+* Microservers
+
+
