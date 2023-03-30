@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  postgres-shops:
+      container_name: postgres-shops
+      image: postgres:14-alpine
+      ports:
+        - "5632:5432"
+      environment:
+        POSTGRES_PASSWORD: root
+        POSTGRES_USER: root
+        POSTGRES_DB: shops
+      volumes:
+        - data-postgres-shops:/var/lib/postgresql/data
+      restart: always      
+
+volumes:
+  data-postgres-shops:
+    name: data-postgres-shops
