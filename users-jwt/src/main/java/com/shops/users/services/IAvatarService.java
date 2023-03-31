@@ -1,9 +1,7 @@
-package com.shopsusers.services;
+package com.shops.users.services;
 
 import com.shops.commons.users.models.entity.Avatar;
-import com.shopsusers.dto.AvatarDto;
-
-
+import com.shops.users.dto.AvatarDto;
 
 import java.util.List;
 import java.util.Optional;

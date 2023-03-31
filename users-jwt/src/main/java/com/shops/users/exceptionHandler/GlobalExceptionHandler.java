@@ -1,4 +1,4 @@
-package com.shopsusers.exceptionHandler;
+package com.shops.users.exceptionHandler;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.http.HttpHeaders;

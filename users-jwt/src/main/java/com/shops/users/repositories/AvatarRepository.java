@@ -1,4 +1,4 @@
-package com.shopsusers.repositories;
+package com.shops.users.repositories;
 
 
 import org.springframework.data.jpa.repository.Query;

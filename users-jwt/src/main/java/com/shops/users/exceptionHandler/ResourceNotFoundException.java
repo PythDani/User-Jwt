@@ -1,4 +1,4 @@
-package com.shopsusers.exceptionHandler;
+package com.shops.users.exceptionHandler;
 
 public class ResourceNotFoundException  extends RuntimeException{
 

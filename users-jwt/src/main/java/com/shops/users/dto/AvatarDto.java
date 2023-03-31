@@ -1,4 +1,4 @@
-package com.shopsusers.dto;
+package com.shops.users.dto;
 
 
 
@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 import com.shops.commons.users.models.entity.Role;
+
+
 
 @AllArgsConstructor
 @NoArgsConstructor

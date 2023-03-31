@@ -1,4 +1,4 @@
-package com.shopsusers.exceptionHandler;
+package com.shops.users.exceptionHandler;
 
 import org.springframework.http.ResponseEntity;
 

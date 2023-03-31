@@ -1,4 +1,4 @@
-package com.shopsusers.services;
+package com.shops.users.services;
 
 import java.util.List;
 import java.util.Objects;
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.shops.commons.users.models.entity.Avatar;
-import com.shopsusers.dto.AvatarDto;
-import com.shopsusers.exceptionHandler.ResourceBadRequestException;
-import com.shopsusers.exceptionHandler.ResourceNotFoundException;
-import com.shopsusers.repositories.AvatarRepository;
+import com.shops.users.dto.AvatarDto;
+import com.shops.users.exceptionHandler.ResourceBadRequestException;
+import com.shops.users.exceptionHandler.ResourceNotFoundException;
+import com.shops.users.repositories.AvatarRepository;
 
 
 @Service
@@ -110,10 +110,19 @@ public class AvatarServiceImpl implements IAvatarService {
         }else {throw new ResourceNotFoundException("avatar does not exists");}
     }
 
-    @Override
-    public Optional<Avatar> byEmail(String email) {
-        return Optional.ofNullable(repository.findByEmail(email).orElse(null));
-    }
+	@Override
+	public Optional<Avatar> byEmail(String email) {
+
+		Optional<Avatar> o = repository.findByEmail(email);
+		if (o.isPresent()) {
+
+			return o;
+			
+		} else {
+			throw new ResourceNotFoundException("avatar does not exists");
+		}
+
+	}
 
     @Override
     public boolean existsByEmail(String email) {

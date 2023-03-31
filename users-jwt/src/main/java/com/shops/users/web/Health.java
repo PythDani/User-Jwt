@@ -1,4 +1,4 @@
-package com.shopsusers.web;
+package com.shops.users.web;
 
 
 import org.springframework.http.HttpStatus;

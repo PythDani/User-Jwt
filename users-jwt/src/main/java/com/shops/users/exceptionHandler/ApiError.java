@@ -1,4 +1,4 @@
-package com.shopsusers.exceptionHandler;
+package com.shops.users.exceptionHandler;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.http.HttpStatus;

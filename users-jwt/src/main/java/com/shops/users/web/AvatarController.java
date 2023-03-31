@@ -1,9 +1,9 @@
-package com.shopsusers.web;
+package com.shops.users.web;
 
 import com.shops.commons.users.models.entity.Avatar;
-import com.shopsusers.dto.AvatarDto;
+import com.shops.users.dto.AvatarDto;
+import com.shops.users.services.IAvatarService;
 
-import com.shopsusers.services.IAvatarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,6 +47,21 @@ public class AvatarController {
 		return ResponseEntity.noContent().build();
 
 	}
+	
+	@GetMapping("/search"
+			+ "")
+	public Avatar findByEmail(@RequestParam String email) {
+		
+			
+		return service.byEmail(email).get();
+	}
+	
+	@GetMapping("/authorized")
+	public Map<String, Object> authorized(@RequestParam(name = "code") String code){
+		
+		return Collections.singletonMap("code", code);
+	}
+	
 
 	private static ResponseEntity<Map<String, String>> validate(BindingResult result) {
 		Map<String, String> errors = new HashMap<>();
