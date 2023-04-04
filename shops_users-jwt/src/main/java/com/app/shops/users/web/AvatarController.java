@@ -20,7 +20,7 @@ public class AvatarController {
 	@Autowired
 	private IAvatarService service;
 
-	@GetMapping("/")
+	@GetMapping
 	public Map<String, List<Avatar>> listar() {
 		return Collections.singletonMap("Avatars", service.listAll());
 	}
