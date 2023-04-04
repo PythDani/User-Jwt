@@ -1,5 +1,7 @@
 package com.demo.springboot.app.zuul.oauth2;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,9 +12,13 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+@RefreshScope
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+	
+	@Value("${config.security.oauth.jwt.key}")
+	private String jwtKey;
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -46,7 +52,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	public JwtAccessTokenConverter accessTokenConverter() {
 
 		JwtAccessTokenConverter tokenConverter = new JwtAccessTokenConverter();
-		tokenConverter.setSigningKey("some_secret_code_aeiou");
+		tokenConverter.setSigningKey(jwtKey);
 
 		return tokenConverter;
 	}
